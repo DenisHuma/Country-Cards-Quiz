@@ -14,16 +14,27 @@
             <h1 id="title-id">Country Guesser Game</h1>
         </header>
         <main>
-            <div class="container">
-                <div class="box">
-                    <span></span>
+            <div class="home-card">
+                <div class="card-text-box">
+                    <span id="transparent-span"></span>
                 <div class="content">
                     <h2 style="font-family: 'Bebas Neue', cursive;">Country Guesser</h2>
-                    <p style="font-family: 'Dosis', sans-serif;">If you can guess ten of them, I'll give you an apple. Come on, press PLAY!</p>
+                    <input type="text" id="userinput" placeholder="Write your answer">
+                    <p style="font-family: 'Dosis', sans-serif;" id="future-quest">If you can guess ten of them, I'll give you an apple. Come on, press PLAY!</p>
                     <button id="play-button">PLAY</button>
                 </div>
                 </div>
-                
+            </div>
+            <div id="game-container">
+                <div style="margin:auto"> <h3>Question 1</h3>
+                    <p>Intrebare 1</p></div>
+                <ul class="answers">
+                    <li class="answers-items"><button class="answer-button">Raspuns A</button></li>
+                    <li class="answers-items"><button class="answer-button">Raspuns B</button></li>
+                    <li class="answers-items"><button class="answer-button">Raspuns C</button></li>
+                    <li class="submit-item" ><button class="submit-answer-button"style="margin:auto">SUBMIT</button></li>
+                    
+                </ul>
             </div>
         </main>
         <footer></footer>
