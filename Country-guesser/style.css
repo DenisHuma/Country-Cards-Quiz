@@ -13,6 +13,26 @@ main{
     align-items:center;
     min-height:100vh;
 }
+
+#correct-answers{
+    position:fixed;
+    right: 20%;
+    top: 50%;
+    z-index: 50;
+    color:rgb(120, 214, 91);
+    font-family: 'Mochiy Pop One', sans-serif;
+    display:none;
+}
+
+#wrong-answers{
+    position:fixed;
+    left: 20%;
+    top: 50%;
+    z-index: 50;
+    color:rgb(230, 80, 80);
+    font-family: 'Mochiy Pop One', sans-serif;
+    display:none;
+}
 .home-card{
     display: flex;
     justify-content: center;
@@ -193,16 +213,31 @@ main{
 * #game-container{
     margin:0;
     padding:0;
+    position:relative;
 }
 
+
 #game-container{
+    opacity:0;
+}
+
+#game-container2{
+    opacity:1;
+    top: 50%;
+    position: relative;
+    margin:auto;
+   
+}
+
+
+.game-cards{
     display:none;
     width: 20vw;
+    min-height: 30vh;
     color:white;
     background: rgba(94, 92, 92, 0.13);
     box-shadow: 0 5px 15px rgba(201, 7, 240, 0.288);
     padding: 20px 0;
-    opacity:0;
     transition: 5000ms opacity ease 1s;
     transition: 1000ms transform ease-in-out;
 }
@@ -220,6 +255,7 @@ main{
     border-radius: 10px;
     color: white;
     cursor: pointer;
+    transition: opacity 0ms;
 }
 
 .answer-button:hover{
@@ -231,7 +267,8 @@ main{
     text-align: center;
 }
 
-.submit-answer-button{
+.submit-answer-button,
+.submit-answer-button2{
     width: 30%;
     min-width: 70px;
     padding: 10px 0;
@@ -241,11 +278,13 @@ main{
     border-radius: 10px;
 }
 
-.submit-answer-button:hover{
+.submit-answer-button:hover,
+.submit-answer-button2:hover{
     border: 1px white solid;
     background: yellow;
     color: purple;
     font-weight: bold;
     cursor:pointer;
 }
+
 

@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <p id="correct-answers">CORRECT: 0</p>
+        <p id="wrong-answers">WRONG: 0</p>
         <script src="index.js"></script>
         <header>
             <h1 id="title-id">Country Guesser Game</h1>
@@ -25,17 +27,29 @@
                 </div>
                 </div>
             </div>
-            <div id="game-container">
-                <div style="margin:auto"> <h3>Question 1</h3>
-                    <p>Intrebare 1</p></div>
-                <ul class="answers">
-                    <li class="answers-items"><button class="answer-button">Raspuns A</button></li>
-                    <li class="answers-items"><button class="answer-button">Raspuns B</button></li>
-                    <li class="answers-items"><button class="answer-button">Raspuns C</button></li>
-                    <li class="submit-item" ><button class="submit-answer-button"style="margin:auto">SUBMIT</button></li>
-                    
-                </ul>
+            <div id="game-main">
+                <div id="game-container" class="game-cards">
+                    <div style="margin: 2vh 0;"> <h3 id="question-number" style="text-align:center">Question 1</h3>
+                        <p id="question" style="text-align:center">Intrebare 1</p></div>
+                    <ul class="answers">
+                        <li class="answers-items"><button class="answer-button" id="answerA">Raspuns A</button></li>
+                        <li class="answers-items"><button class="answer-button" id="answerB">Raspuns B</button></li>
+                        <li class="answers-items"><button class="answer-button" id="answerC">Raspuns C</button></li>
+                        <li class="submit-item" ><button class="submit-answer-button"style="margin:auto">SUBMIT</button></li> 
+                    </ul>
+                </div>
+                <div id="game-container2" class="game-cards">
+                    <div style="margin: 2vh 0;"> <h3 id="question-number" style="text-align:center">Question 1</h3>
+                        <p id="question2" style="text-align:center">Intrebare 1</p></div>
+                    <ul class="answers">
+                        <li class="answers-items"><button class="answer-button" id="answerD">Raspuns A</button></li>
+                        <li class="answers-items"><button class="answer-button" id="answerE">Raspuns B</button></li>
+                        <li class="answers-items"><button class="answer-button" id="answerF">Raspuns C</button></li>
+                        <li class="submit-item" ><button class="submit-answer-button2"style="margin:auto">SUBMIT</button></li> 
+                    </ul>
+                </div>
             </div>
+            
         </main>
         <footer></footer>
         <script></script>
