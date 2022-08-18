@@ -26,36 +26,47 @@ const Moldova = new Questions("Has the capital at Chisinau", 'Serbia', 'Moldova'
 questionsarray.push(Moldova);
 const Greece = new Questions("Motherland of Aristotel", 'Croatia', 'Greece', 'Macedonia', 'Greece');
 questionsarray.push(Greece);
+const Nepal = new Questions("Has the top 8 tallest points in the world", 'India', 'Nepal', 'China', 'Nepal');
+questionsarray.push(Nepal);
+const Rusia = new Questions("The biggest country in the world by size", 'China', 'USA', 'Rusia', 'Russia');
+questionsarray.push(Rusia);
+const Australia = new Questions("Only continent that has coyotes", 'North America', 'Asia', 'Australia', 'Australia');
+questionsarray.push(Australia);
 //
 
 //functions
 
-
-function randomquestion(){
-    let index = Math.floor(Math.random() * questionsarray.length);
-    let classname = questionsarray[index];
-    return classname;
+function shuffle(array) {
+    let currentIndex = array.length, randomIndex;
+    while (currentIndex != 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+    return array;
 }
+
 
 let right = 'NA';
 
-function buttonPlay(answerA, answerB, answerC){
+function buttonPlay(answerA, answerB, answerC) {
 
-    answerA.addEventListener('click', function(){
+    answerA.addEventListener('click', function () {
         answerA.style.background = 'purple';
         answerB.style.background = 'rgba(94, 92, 92, 0)';
         answerC.style.background = 'rgba(94, 92, 92, 0)';
         right = answerA.innerHTML;
     })
 
-    answerB.addEventListener('click', function(){
+    answerB.addEventListener('click', function () {
         answerB.style.background = 'purple';
         answerA.style.background = 'rgba(94, 92, 92, 0)';
         answerC.style.background = 'rgba(94, 92, 92, 0)';
         right = answerB.innerHTML;
     })
 
-    answerC.addEventListener('click', function(){
+    answerC.addEventListener('click', function () {
         answerC.style.background = 'purple';
         answerA.style.background = 'rgba(94, 92, 92, 0)';
         answerB.style.background = 'rgba(94, 92, 92, 0)';
@@ -63,8 +74,8 @@ function buttonPlay(answerA, answerB, answerC){
     })
 }
 
-function questionCreate(classname, answerA, answerB, answerC, question){
-     
+function questionCreate(classname, answerA, answerB, answerC, question) {
+
     answerA.innerHTML = classname.A;
     answerB.innerHTML = classname.B;
     answerC.innerHTML = classname.C;
@@ -76,6 +87,7 @@ function questionCreate(classname, answerA, answerB, answerC, question){
 let classname = '1';
 
 window.onload = function () {
+    shuffle(questionsarray);
     let playbutton = document.querySelector("#play-button");
     let card = document.querySelector('.home-card');
     let gameContainer = document.querySelector("#game-container");
@@ -90,16 +102,15 @@ window.onload = function () {
     let scoreminus = 0;
     playbutton.addEventListener("click", function () {
         card.style.opacity = '0';
-        classname = randomquestion();
         const myTimeout = setTimeout(displaychange, 500);
         function displaychange() {
-            rightanswers.style.display='block';
-            wronganswers.style.display='block';
+            rightanswers.style.display = 'block';
+            wronganswers.style.display = 'block';
             answerA = document.querySelector('#answerA');
-             answerB = document.querySelector('#answerB');
+            answerB = document.querySelector('#answerB');
             answerC = document.querySelector('#answerC');
             question = document.querySelector("#question");
-            questionCreate(classname, answerA, answerB, answerC, question);
+            questionCreate(questionsarray[0], answerA, answerB, answerC, question);
             card.style.display = 'none';
             gameContainer.style.display = 'grid';
             gameContainer.style.opacity = '1';
@@ -108,7 +119,7 @@ window.onload = function () {
         }
     })
 
-    
+
 
 
     let submitbutton = document.querySelector(".submit-answer-button");
@@ -116,17 +127,17 @@ window.onload = function () {
         gameContainer.style.transform = 'rotateY(180deg)';
         const myTimeout = setTimeout(displaychange3, 1000);
         function displaychange3() {
-            if(right == classname.rightanswer){
+            if (right == questionsarray[0].rightanswer) {
                 gameContainer.style.transform = 'translateX(100vw)';
-                scoreplus +=1;
+                scoreplus += 1;
                 rightanswers.innerHTML = `CORRECT: ${scoreplus}`;
             }
-            else{
+            else {
                 gameContainer.style.transform = 'translateX(-100vw)';
-                scoreminus +=1;
+                scoreminus += 1;
                 wronganswers.innerHTML = `WRONG: ${scoreminus}`;
             }
-            
+
         }
         const myTimeout2 = setTimeout(displaychange2, 1400);
         function displaychange2() {
@@ -137,7 +148,7 @@ window.onload = function () {
         let answerE = document.querySelector("#answerE");
         let answerF = document.querySelector("#answerF");
         let question2 = document.querySelector("#question2");
-        questionCreate(France, answerD, answerE, answerF, question2)
+        questionCreate(questionsarray[1], answerD, answerE, answerF, question2)
 
     })
 
@@ -146,28 +157,28 @@ window.onload = function () {
         gamecontainer2.style.transform = 'rotateY(180deg)';
         const myTimeout = setTimeout(displaychange3, 1000);
         function displaychange3() {
-            if(right == France.rightanswer){
+            if (right == questionsarray[1].rightanswer) {
                 gamecontainer2.style.transform = 'translateX(100vw)';
-                scoreplus +=1;
+                scoreplus += 1;
                 rightanswers.innerHTML = `CORRECT: ${scoreplus}`;
             }
-            else{
+            else {
                 gamecontainer2.style.transform = 'translateX(-100vw)';
-                scoreminus +=1;
+                scoreminus += 1;
                 wronganswers.innerHTML = `WRONG: ${scoreminus}`;
             }
-            
+
         }
         const myTimeout2 = setTimeout(displaychange2, 1400);
         function displaychange2() {
-            gamecontainer2.style.display = 'none'; 
-            gamecontainer3.style.display = 'block'; 
+            gamecontainer2.style.display = 'none';
+            gamecontainer3.style.display = 'block';
         }
         let answerG = document.querySelector("#answerG");
         let answerH = document.querySelector("#answerH");
         let answerI = document.querySelector("#answerI");
         let question3 = document.querySelector("#question3");
-        questionCreate(Romania, answerG, answerH, answerI, question3)
+        questionCreate(questionsarray[2], answerG, answerH, answerI, question3)
     })
 
     let submitbutton3 = document.querySelector(".submit-answer-button3");
@@ -175,28 +186,28 @@ window.onload = function () {
         gamecontainer3.style.transform = 'rotateY(180deg)';
         const myTimeout = setTimeout(displaychange3, 1000);
         function displaychange3() {
-            if(right == Romania.rightanswer){
+            if (right == questionsarray[2].rightanswer) {
                 gamecontainer3.style.transform = 'translateX(100vw)';
-                scoreplus +=1;
+                scoreplus += 1;
                 rightanswers.innerHTML = `CORRECT: ${scoreplus}`;
             }
-            else{
+            else {
                 gamecontainer3.style.transform = 'translateX(-100vw)';
-                scoreminus +=1;
+                scoreminus += 1;
                 wronganswers.innerHTML = `WRONG: ${scoreminus}`;
             }
-            
+
         }
         const myTimeout2 = setTimeout(displaychange2, 1400);
         function displaychange2() {
-            gamecontainer3.style.display = 'none'; 
-            gamecontainer4.style.display = 'block'; 
+            gamecontainer3.style.display = 'none';
+            gamecontainer4.style.display = 'block';
         }
         let answerJ = document.querySelector("#answerJ");
         let answerK = document.querySelector("#answerK");
         let answerL = document.querySelector("#answerL");
         let question4 = document.querySelector("#question4");
-        questionCreate(Germany, answerJ, answerK, answerL, question4)
+        questionCreate(questionsarray[3], answerJ, answerK, answerL, question4)
     })
 
     let submitbutton4 = document.querySelector(".submit-answer-button4");
@@ -204,28 +215,28 @@ window.onload = function () {
         gamecontainer4.style.transform = 'rotateY(180deg)';
         const myTimeout = setTimeout(displaychange3, 1000);
         function displaychange3() {
-            if(right == Germany.rightanswer){
+            if (right == questionsarray[3].rightanswer) {
                 gamecontainer4.style.transform = 'translateX(100vw)';
-                scoreplus +=1;
+                scoreplus += 1;
                 rightanswers.innerHTML = `CORRECT: ${scoreplus}`;
             }
-            else{
+            else {
                 gamecontainer4.style.transform = 'translateX(-100vw)';
-                scoreminus +=1;
+                scoreminus += 1;
                 wronganswers.innerHTML = `WRONG: ${scoreminus}`;
             }
-            
+
         }
         const myTimeout2 = setTimeout(displaychange2, 1400);
         function displaychange2() {
-            gamecontainer4.style.display = 'none'; 
-            gamecontainer5.style.display = 'block'; 
+            gamecontainer4.style.display = 'none';
+            gamecontainer5.style.display = 'block';
         }
         let answerM = document.querySelector("#answerM");
         let answerN = document.querySelector("#answerN");
         let answerO = document.querySelector("#answerO");
         let question5 = document.querySelector("#question5");
-        questionCreate(Belgium, answerM, answerN, answerO, question5)
+        questionCreate(questionsarray[4], answerM, answerN, answerO, question5)
     })
 
     let submitbutton5 = document.querySelector(".submit-answer-button5");
@@ -233,28 +244,28 @@ window.onload = function () {
         gamecontainer5.style.transform = 'rotateY(180deg)';
         const myTimeout = setTimeout(displaychange3, 1000);
         function displaychange3() {
-            if(right == Belgium.rightanswer){
+            if (right == questionsarray[4].rightanswer) {
                 gamecontainer5.style.transform = 'translateX(100vw)';
-                scoreplus +=1;
+                scoreplus += 1;
                 rightanswers.innerHTML = `CORRECT: ${scoreplus}`;
             }
-            else{
+            else {
                 gamecontainer5.style.transform = 'translateX(-100vw)';
-                scoreminus +=1;
+                scoreminus += 1;
                 wronganswers.innerHTML = `WRONG: ${scoreminus}`;
             }
-            
+
         }
         const myTimeout2 = setTimeout(displaychange2, 1400);
         function displaychange2() {
-            gamecontainer5.style.display = 'none'; 
-            gameend.style.display = 'block'; 
+            gamecontainer5.style.display = 'none';
+            gameend.style.display = 'block';
             let numberright = document.querySelector("#number-right");
             let numberwrong = document.querySelector("#number-wrong");
             numberright.innerHTML = scoreplus;
             numberwrong.innerHTML = scoreminus;
         }
-        
+
     })
 
 }
