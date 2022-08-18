@@ -11,7 +11,7 @@ main{
     display:flex;
     justify-content: center;
     align-items:center;
-    min-height:100vh;
+    margin-top:10%;
 }
 
 #correct-answers{
@@ -214,14 +214,12 @@ main{
     margin:0;
     padding:0;
     position:relative;
-}
-
-
-#game-container{
     opacity:0;
 }
 
-#game-container2{
+
+#game-container2,
+#game-container3{
     opacity:1;
     top: 50%;
     position: relative;
@@ -268,7 +266,10 @@ main{
 }
 
 .submit-answer-button,
-.submit-answer-button2{
+.submit-answer-button2,
+.submit-answer-button3,
+.submit-answer-button4,
+.submit-answer-button5{
     width: 30%;
     min-width: 70px;
     padding: 10px 0;
@@ -279,7 +280,10 @@ main{
 }
 
 .submit-answer-button:hover,
-.submit-answer-button2:hover{
+.submit-answer-button2:hover,
+.submit-answer-button3:hover,
+.submit-answer-button4:hover,
+.submit-answer-button5:hover{
     border: 1px white solid;
     background: yellow;
     color: purple;

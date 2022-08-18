@@ -9,18 +9,19 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <header>
+            <h1 id="title-id">Country Cards Quiz</h1>
+        </header>
         <p id="correct-answers">CORRECT: 0</p>
         <p id="wrong-answers">WRONG: 0</p>
         <script src="index.js"></script>
-        <header>
-            <h1 id="title-id">Country Guesser Game</h1>
-        </header>
+       
         <main>
             <div class="home-card">
                 <div class="card-text-box">
                     <span id="transparent-span"></span>
                 <div class="content">
-                    <h2 style="font-family: 'Bebas Neue', cursive;">Country Guesser</h2>
+                    <h2 style="font-family: 'Bebas Neue', cursive;">Country Cards Quiz</h2>
                     <input type="text" id="userinput" placeholder="Write your answer">
                     <p style="font-family: 'Dosis', sans-serif;" id="future-quest">If you can guess ten of them, I'll give you an apple. Come on, press PLAY!</p>
                     <button id="play-button">PLAY</button>
@@ -39,7 +40,7 @@
                     </ul>
                 </div>
                 <div id="game-container2" class="game-cards">
-                    <div style="margin: 2vh 0;"> <h3 id="question-number" style="text-align:center">Question 1</h3>
+                    <div style="margin: 2vh 0;"> <h3 id="question-number" style="text-align:center">Question 2</h3>
                         <p id="question2" style="text-align:center">Intrebare 1</p></div>
                     <ul class="answers">
                         <li class="answers-items"><button class="answer-button" id="answerD">Raspuns A</button></li>
@@ -47,6 +48,42 @@
                         <li class="answers-items"><button class="answer-button" id="answerF">Raspuns C</button></li>
                         <li class="submit-item" ><button class="submit-answer-button2"style="margin:auto">SUBMIT</button></li> 
                     </ul>
+                </div>
+                <div id="game-container3" class="game-cards">
+                    <div style="margin: 2vh 0;"> <h3 id="question-number" style="text-align:center">Question 3</h3>
+                        <p id="question3" style="text-align:center">Intrebare 1</p></div>
+                    <ul class="answers">
+                        <li class="answers-items"><button class="answer-button" id="answerG">Raspuns A</button></li>
+                        <li class="answers-items"><button class="answer-button" id="answerH">Raspuns B</button></li>
+                        <li class="answers-items"><button class="answer-button" id="answerI">Raspuns C</button></li>
+                        <li class="submit-item" ><button class="submit-answer-button3"style="margin:auto">SUBMIT</button></li> 
+                    </ul>
+                </div>
+                <div id="game-container4" class="game-cards">
+                    <div style="margin: 2vh 0;"> <h3 id="question-number" style="text-align:center">Question 4</h3>
+                        <p id="question4" style="text-align:center">Intrebare 1</p></div>
+                    <ul class="answers">
+                        <li class="answers-items"><button class="answer-button" id="answerJ">Raspuns A</button></li>
+                        <li class="answers-items"><button class="answer-button" id="answerK">Raspuns B</button></li>
+                        <li class="answers-items"><button class="answer-button" id="answerL">Raspuns C</button></li>
+                        <li class="submit-item" ><button class="submit-answer-button4"style="margin:auto">SUBMIT</button></li> 
+                    </ul>
+                </div>
+                <div id="game-container5" class="game-cards">
+                    <div style="margin: 2vh 0;"> <h3 id="question-number" style="text-align:center">Question 5</h3>
+                        <p id="question5" style="text-align:center">Intrebare 1</p></div>
+                    <ul class="answers">
+                        <li class="answers-items"><button class="answer-button" id="answerM">Raspuns A</button></li>
+                        <li class="answers-items"><button class="answer-button" id="answerN">Raspuns B</button></li>
+                        <li class="answers-items"><button class="answer-button" id="answerO">Raspuns C</button></li>
+                        <li class="submit-item" ><button class="submit-answer-button5"style="margin:auto">SUBMIT</button></li> 
+                    </ul>
+                </div>
+                <div id="game-end"class="game-cards">
+                    <div style="margin: 2vh 0;"> <h3 id="question-number" style="text-align:center">FINAL</h3>
+                        <p id="question5" style="text-align:center">CONGRATULATIONS!</p></div>
+                        <p style="text-align:center">Your score is: <span id="number-right">0</span> corect answers and <span id="number-wrong">0</span> wrong answers</p>
+                   
                 </div>
             </div>
             
